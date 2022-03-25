@@ -9,7 +9,7 @@ class SubTime:
         msLine = int(line[x]) + self.milliseconds
         secLine = int(line[x-1]) + self.seconds
         minLine = int(line[x-2]) + self.minutes
-        #milliseconds bloc
+        # milliseconds bloc:
         if msLine < 0:
             while msLine < 0:
                 secLine = secLine - 1
@@ -22,7 +22,7 @@ class SubTime:
                 line[x] = str(msLine).zfill(3)
         else:
             line[x] = str(msLine).zfill(3)
-        #seconds bloc
+        # seconds bloc:
         if secLine < 0:
             while secLine < 0:
                 minLine = minLine - 1
@@ -35,7 +35,7 @@ class SubTime:
                 line[x-1] = str(secLine).zfill(2)
         else:
             line[x-1] = str(secLine).zfill(2)
-        #minutes bloc
+        # minutes bloc:
         if minLine < 0:
             while minLine < 0:
                 hourLine = int(line[x-3]) - 1
@@ -51,4 +51,3 @@ class SubTime:
         else:
             line[x-2] = str(minLine).zfill(2)
         return line
-
