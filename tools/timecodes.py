@@ -16,8 +16,8 @@ def main(file, seconds=0, milliseconds=0, minutes=0):
                     next_timecode = time_line.timechanger(first_timecode, 8)
                     old_file[index] = str(
                         '%s:%s:%s,%s %s %s:%s:%s,%s\n' %
-                        (line[0], line[1], line[2], line[3], line[4],line[5],
-                         line[6],line[7], line[8]))
+                        (line[0], line[1], line[2], line[3], line[4], line[5],
+                         line[6], line[7], line[8]))
 
             elif file.endswith('.ass'):
                 if line.startswith('Dialogue:'):
@@ -34,8 +34,8 @@ def main(file, seconds=0, milliseconds=0, minutes=0):
                     line[9] = line[9][:-1]
                     old_file[index] = (
                         '%s:%s,%s:%s:%s.%s,%s:%s:%s.%s,%s' %
-                        (line[0], line[1],line[2], line[3], line[4], line[5],
-                         line[6], line[7],line[8], line[9], line[10]))
+                        (line[0], line[1], line[2], line[3], line[4], line[5],
+                         line[6], line[7], line[8], line[9], line[10]))
 
     with open(file, 'w') as new_file:
         for line in old_file:
