@@ -8,7 +8,8 @@ def main(file, seconds=0, milliseconds=0, minutes=0):
     with open(file) as o_f:
         old_file = o_f.readlines()
         if file.endswith('.srt'):
-            timecode = re.compile('\d\d:\d\d:\d\d,\d{3}\s\-\-\>\s\d\d.*')
+            timecode = re.compile(
+                '\-?\d*\d:\d\d:\d\d,\d{3}\s\-\-\>\s\-?\d*\d:\d\d:\d\d,\d{3}')
             for index, line in enumerate(old_file):
                 match_line = timecode.match(line)
                 if match_line:
